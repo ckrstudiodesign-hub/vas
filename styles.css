@@ -2716,7 +2716,7 @@ h1, h2, h3, h4 {
 
     /* CSS Auto-scrolling Carousels (Logos) */
     .carousel-track:not(.auto-slider) {
-        animation: scroll 20s linear infinite !important;
+        animation: scrollHorizontal 30s linear infinite !important;
         display: flex !important;
         width: max-content !important;
     }
