@@ -52,6 +52,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -60,6 +61,7 @@ body {
     background-color: var(--color-warm-white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
@@ -2714,12 +2716,6 @@ h1, h2, h3, h4 {
         animation: none !important;
     }
 
-    /* CSS Auto-scrolling Carousels (Logos) */
-    .carousel-track:not(.auto-slider) {
-        animation: scrollHorizontal 30s linear infinite !important;
-        display: flex !important;
-        width: max-content !important;
-    }
     
     .auto-slider::-webkit-scrollbar, 
     .carousel-track::-webkit-scrollbar,
@@ -2727,14 +2723,9 @@ h1, h2, h3, h4 {
         display: none;
     }
 
-    .auto-slider > div, .carousel-track > div, .carousel-track > img, .leader-card {
+    .auto-slider > div, .leader-card {
         flex: 0 0 85vw !important;
         scroll-snap-align: center;
-    }
-    
-    .carousel-track > img {
-        flex: 0 0 auto !important; /* Logos shouldn't be 85vw wide, just their natural width */
-        margin: 0 20px !important;
     }
 
     /* 6. Structural Grids to Single Column */
