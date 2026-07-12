@@ -35,7 +35,6 @@
                 top: window.innerHeight,
                 behavior: 'smooth'
             });
-        });
     }
 
     // FAQ Accordion
@@ -120,7 +119,6 @@
                 mobileNavOverlay.classList.remove('active');
             });
         });
-        });
     }
 
     // Footer Accordions for Mobile
@@ -151,5 +149,6 @@
         }, 3000);
     }
 });
+
 
 
