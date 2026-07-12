@@ -2652,6 +2652,10 @@ h1, h2, h3, h4 {
         gap: 12px !important;
         margin-top: 24px !important;
     }
+
+    .mobile-hidden {
+        display: none !important;
+    }
     
     .premium-card, .service-card, .faq-item, .blog-card, .glass-card-hover {
         border-radius: 20px !important;
@@ -2671,7 +2675,6 @@ h1, h2, h3, h4 {
         padding-bottom: 20px !important;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; 
-        animation: none !important; 
     }
     
     .auto-slider::-webkit-scrollbar, 
