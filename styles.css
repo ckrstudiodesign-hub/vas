@@ -1,4 +1,4 @@
-﻿/* Custom Properties */
+/* Custom Properties */
 :root {
     /* Background Rhythms */
     --color-white: #ffffff;
@@ -605,7 +605,9 @@ h1, h2, h3, h4 {
 }
 
 .center-buttons {
+    display: flex;
     justify-content: center;
+    gap: 16px;
 }
 
 .hero-trust-indicators {
@@ -2665,6 +2667,7 @@ h1, h2, h3, h4 {
     }
     
     .hero-cta, .hero-buttons, .cta-buttons {
+        display: flex !important;
         flex-direction: column !important;
         gap: 28px !important;
         width: 100%;
