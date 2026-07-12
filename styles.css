@@ -570,7 +570,7 @@ h1, h2, h3, h4 {
 
 .centered-wrapper {
     max-width: 800px;
-    margin: 120px auto 0 auto;
+    margin: 0 auto;
 }
 
 .hero-eyebrow {
@@ -588,7 +588,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-headline {
-    font-size: 5.5rem;
+    font-size: 4rem;
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.01em;
@@ -606,6 +606,22 @@ h1, h2, h3, h4 {
 
 .center-buttons {
     justify-content: center;
+}
+
+.hero-trust-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-trust-indicators span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .hero-scroll-indicator {
@@ -2628,6 +2644,13 @@ h1, h2, h3, h4 {
     
     .hero-cta .btn, .hero-buttons .btn, .cta-buttons .btn {
         width: 100% !important;
+    }
+    
+    .hero-trust-indicators {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: 24px !important;
     }
     
     .premium-card, .service-card, .faq-item, .blog-card, .glass-card-hover {

@@ -27,6 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Down Arrow scroll
+    const downArrow = document.querySelector('.hero-scroll-indicator .circle-btn');
+    if (downArrow) {
+        downArrow.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
