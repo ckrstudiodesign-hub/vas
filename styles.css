@@ -2735,7 +2735,8 @@ h1, h2, h3, h4 {
     .team-grid,
     .about-content-split,
     .vm-grid,
-    .contact-grid {
+    .contact-grid,
+    .contact-name-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 20px !important;
