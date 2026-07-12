@@ -2643,7 +2643,10 @@ h1, h2, h3, h4 {
     }
     
     .hero-cta .btn, .hero-buttons .btn, .cta-buttons .btn {
-        width: 100% !important;
+        width: 80% !important;
+        margin: 0 auto;
+        padding: 12px 24px !important;
+        font-size: 0.95rem !important;
     }
     
     .hero-trust-indicators {
@@ -2675,6 +2678,7 @@ h1, h2, h3, h4 {
         padding-bottom: 20px !important;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; 
+        animation: none !important;
     }
     
     .auto-slider::-webkit-scrollbar, 
