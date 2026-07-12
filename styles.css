@@ -2700,9 +2700,8 @@ h1, h2, h3, h4 {
         box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
     }
 
-    /* 5. Swipeable Carousels (Horizontal Scroll) */
+    /* JS Swipeable Carousels */
     .auto-slider, 
-    .carousel-track,
     .partner-grid {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -2713,6 +2712,13 @@ h1, h2, h3, h4 {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; 
         animation: none !important;
+    }
+
+    /* CSS Auto-scrolling Carousels (Logos) */
+    .carousel-track:not(.auto-slider) {
+        animation: scroll 20s linear infinite !important;
+        display: flex !important;
+        width: max-content !important;
     }
     
     .auto-slider::-webkit-scrollbar, 
