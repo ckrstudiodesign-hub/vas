@@ -1,4 +1,4 @@
-/* Custom Properties */
+﻿/* Custom Properties */
 :root {
     /* Background Rhythms */
     --color-white: #ffffff;
@@ -2572,6 +2572,34 @@ h1, h2, h3, h4 {
         transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     }
     
+    .mobile-menu-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: none;
+        color: var(--color-white);
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+    
+    .mobile-social-icons {
+        margin-top: 48px;
+        display: flex;
+        gap: 24px;
+    }
+    
+    .mobile-social-icons a {
+        color: var(--color-white);
+        font-size: 2rem;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+    
+    .mobile-social-icons a:hover {
+        opacity: 1;
+    }
+    
     .mobile-nav-overlay.active {
         transform: translateX(0);
     }
@@ -2638,17 +2666,17 @@ h1, h2, h3, h4 {
     
     .hero-cta, .hero-buttons, .cta-buttons {
         flex-direction: column !important;
-        gap: 20px !important;
+        gap: 28px !important;
         width: 100%;
         align-items: center;
     }
     
     .hero-cta .btn, .hero-buttons .btn, .cta-buttons .btn {
         width: 100% !important;
-        max-width: 280px;
+        max-width: 260px;
         margin: 0 auto;
-        padding: 14px 20px !important;
-        font-size: 0.95rem !important;
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
         white-space: normal !important;
     }
     
@@ -2810,4 +2838,5 @@ h1, h2, h3, h4 {
         gap: 16px;
     }
 }
+
 

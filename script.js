@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     
@@ -100,30 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
     
     if (mobileMenuBtn && mobileNavOverlay) {
         mobileMenuBtn.addEventListener('click', () => {
-            mobileNavOverlay.classList.toggle('active');
-            // Toggle icon from hamburger to close
-            const icon = mobileMenuBtn.querySelector('i');
-            if(mobileNavOverlay.classList.contains('active')) {
-                icon.classList.remove('ph-list');
-                icon.classList.add('ph-x');
-            } else {
-                icon.classList.remove('ph-x');
-                icon.classList.add('ph-list');
-            }
+            mobileNavOverlay.classList.add('active');
         });
+        
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileNavOverlay.classList.remove('active');
+            });
+        }
 
         // Close menu when clicking a link
         const mobileLinks = mobileNavOverlay.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileNavOverlay.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.remove('ph-x');
-                icon.classList.add('ph-list');
             });
+        });
         });
     }
 
@@ -155,3 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+
+
