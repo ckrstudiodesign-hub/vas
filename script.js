@@ -138,7 +138,161 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 3000);
     }
+    // Typing animation for contact form textarea placeholder
+    const contactTextarea = document.querySelector('#contact textarea');
+    if (contactTextarea) {
+        const phrases = [
+            "How can we help you?",
+            "I'd like to set up a Mainland company...",
+            "Looking for Free Zone options in Dubai...",
+            "Interested in the UAE Golden Visa...",
+            "I need help with corporate banking..."
+        ];
+        
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingTimeout;
+        
+        function typePlaceholder() {
+            if (contactTextarea.value.length > 0) return;
+
+            const currentPhrase = phrases[currentPhraseIndex];
+            let typingSpeed = isDeleting ? 30 : 60;
+            
+            if (isDeleting) {
+                contactTextarea.setAttribute('placeholder', currentPhrase.substring(0, currentCharIndex - 1));
+                currentCharIndex--;
+            } else {
+                contactTextarea.setAttribute('placeholder', currentPhrase.substring(0, currentCharIndex + 1) + "|");
+                currentCharIndex++;
+            }
+            
+            // Remove the pipe cursor if fully deleted
+            if (isDeleting && currentCharIndex === 0) {
+                contactTextarea.setAttribute('placeholder', "");
+            }
+
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                // Remove cursor at the end before waiting
+                contactTextarea.setAttribute('placeholder', currentPhrase);
+                isDeleting = true;
+                typingSpeed = 2000; // wait 2s
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // wait 0.5s before typing next
+            }
+            
+            typingTimeout = setTimeout(typePlaceholder, typingSpeed);
+        }
+        
+        setTimeout(typePlaceholder, 1000);
+        
+        contactTextarea.addEventListener('focus', () => {
+            clearTimeout(typingTimeout);
+            contactTextarea.setAttribute('placeholder', 'Type your requirements here...');
+        });
+        
+        contactTextarea.addEventListener('blur', () => {
+            if (contactTextarea.value.length === 0) {
+                isDeleting = false;
+                currentCharIndex = 0;
+                typePlaceholder();
+            }
+        });
+    }
 });
 
+// On-load and Recurring Contact Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('onloadContactModal');
+    
+    function showModal() {
+        if (modal && !modal.classList.contains('active')) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+    }
 
+    // Show modal on every load with a slight delay
+    setTimeout(showModal, 1500); // 1.5 second delay
+    
+    // Show modal every 3 minutes
+    setInterval(showModal, 180000);
 
+    // Close modal logic
+    const closeBtn = document.querySelector('.onload-modal-close');
+    
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Handle form submission (prevent default and close)
+    const onloadForm = document.getElementById('onloadContactForm');
+    if (onloadForm) {
+        onloadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Optional: show a quick thank you alert or toast
+            // alert('Thank you! Our team will contact you shortly.');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+});
+
+// WhatsApp Tooltip Typing Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const tooltipText = document.getElementById('whatsapp-typing-text');
+    if (!tooltipText) return;
+
+    const phrases = [
+        "Hello !",
+        "Planning to start a business in Dubai ?",
+        "Click here for expert advice !"
+    ];
+    
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+    
+    function typeTooltip() {
+        const currentPhrase = phrases[currentPhraseIndex];
+        
+        if (isDeleting) {
+            tooltipText.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+            typingSpeed = 30; // faster deletion
+        } else {
+            tooltipText.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+            typingSpeed = 60; // typing speed
+        }
+
+        if (!isDeleting && currentCharIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 2000; // Wait 2s before deleting
+        } else if (isDeleting && currentCharIndex === 0) {
+            isDeleting = false;
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            typingSpeed = 500; // Wait 0.5s before typing next
+        }
+        
+        setTimeout(typeTooltip, typingSpeed);
+    }
+    
+    // Start typing after initial slide-in animation finishes
+    setTimeout(typeTooltip, 1500); 
+});
