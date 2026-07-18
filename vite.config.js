@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import fs from 'fs';
+
+// Automatically bundle all HTML files in the root directory
+const htmlFiles = fs.readdirSync(__dirname).filter(file => file.endsWith('.html'));
+const input = {};
+
+htmlFiles.forEach(file => {
+  const name = file.replace('.html', '');
+  input[name] = resolve(__dirname, file);
+});
 
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        mainland: resolve(__dirname, 'mainland.html'),
-        freezone: resolve(__dirname, 'freezone.html'),
-        offshore: resolve(__dirname, 'offshore.html'),
-        services: resolve(__dirname, 'services.html'),
-        privacy: resolve(__dirname, 'privacy.html')
-      }
+      input
     }
   }
 });
