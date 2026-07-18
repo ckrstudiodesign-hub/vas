@@ -215,11 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Show modal on every load with a slight delay
-    setTimeout(showModal, 1500); // 1.5 second delay
-    
-    // Show modal every 3 minutes
-    setInterval(showModal, 180000);
+    // Only show modal on the home page
+    const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+    if (isHomePage) {
+        setTimeout(showModal, 1500); // 1.5 second delay
+    }
 
     // Close modal logic
     const closeBtn = document.querySelector('.onload-modal-close');
