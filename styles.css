@@ -2635,6 +2635,13 @@ h1, h2, h3, h4 {
 
     .mobile-nav-overlay .nav-dropdown .dropdown-content {
         display: none !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+    }
+
+    .mobile-nav-overlay .nav-dropdown .dropdown-column {
+        align-items: center !important;
+        text-align: center !important;
     }
 
     .mobile-nav-overlay .nav-dropdown.active .dropdown-content {
