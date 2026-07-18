@@ -239,17 +239,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle form submission (prevent default and close)
-    const onloadForm = document.getElementById('onloadContactForm');
-    if (onloadForm) {
-        onloadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Optional: show a quick thank you alert or toast
-            // alert('Thank you! Our team will contact you shortly.');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+    // Form Sanitization and Validation
+    function sanitizeHTML(str) {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
     }
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Handle all forms (prevent default, validate, sanitize, check honeypot)
+    const allForms = document.querySelectorAll('form');
+    allForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // 1. Honeypot Check for Spam Protection
+            const honeypot = form.querySelector('input[name="_honey"]');
+            if (honeypot && honeypot.value !== '') {
+                // Silently reject spam
+                console.warn('Spam detected');
+                return;
+            }
+
+            // 2. Validate Inputs
+            let isValid = true;
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                if (!validateEmail(emailInput.value)) {
+                    alert('Please enter a valid email address.');
+                    isValid = false;
+                }
+            }
+
+            const textInputs = form.querySelectorAll('input[type="text"], input[type="tel"], textarea');
+            textInputs.forEach(input => {
+                if (input.name === '_honey') return; // skip honeypot
+                // Basic sanitization
+                input.value = sanitizeHTML(input.value);
+            });
+
+            if (!isValid) return;
+
+            // Optional: Process the form via fetch/API here
+            
+            // If it's the modal form, close it
+            if (form.id === 'onloadContactForm' && modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            form.reset();
+        });
+    });
 });
 
 // WhatsApp Tooltip Typing Animation
