@@ -102,10 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Close menu when clicking a link
+        // Close menu when clicking a link, but toggle if it's a dropdown headline
         const mobileLinks = mobileNavOverlay.querySelectorAll('a');
         mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                const dropdown = link.closest('.nav-dropdown');
+                // Check if this link is a dropdown headline
+                if (dropdown && link.nextElementSibling && link.nextElementSibling.classList.contains('dropdown-content')) {
+                    e.preventDefault(); // Prevent navigation
+                    dropdown.classList.toggle('active'); // Toggle dropdown
+                    return; // Don't close the menu
+                }
+                
+                // For normal links, close the menu
                 mobileNavOverlay.classList.remove('active');
             });
         });
@@ -340,4 +349,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start typing after initial slide-in animation finishes
     setTimeout(typeTooltip, 1500); 
+
+    // Licence Card Accordion
+    const licenceCards = document.querySelectorAll('.licence-card-header');
+    licenceCards.forEach(cardHeader => {
+        cardHeader.addEventListener('click', () => {
+            if (window.innerWidth <= 991) {
+                const card = cardHeader.parentElement;
+                // Optional: close other cards
+                // document.querySelectorAll('.licence-card').forEach(c => {
+                //     if(c !== card) c.classList.remove('active');
+                // });
+                card.classList.toggle('active');
+            }
+        });
+    });
 });
