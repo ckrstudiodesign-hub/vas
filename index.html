@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="styles.css?v=1.3">
+    <link rel="stylesheet" href="styles.css?v=1.8">
 </head>
 <body>
 
@@ -79,7 +79,7 @@
                 </div>
             </nav>
             <div class="nav-actions">
-                <a href="#contact" class="btn" style="padding: 0 24px; height: 42px; border-radius: 100px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; backdrop-filter: blur(10px); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;">Book Consultation</a>
+
                 <button class="mobile-menu-btn"><i class="ph ph-list"></i></button>
             </div>
         </div>
@@ -152,44 +152,72 @@
     </div>
 
 
-    <section id="home" class="hero">
+    <section id="home" class="hero premium-hero">
         <div class="hero-bg">
+            <div class="hero-bg-overlay"></div>
             <video autoplay loop muted playsinline class="hero-video">
                 <source src="videos/herobg.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="container hero-content" style="flex-direction: row; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <div class="container hero-content premium-grid">
             
-            <!-- Left Side -->
-            <div class="hero-text-wrapper" style="max-width: 600px; text-align: left; flex: 1; min-width: 300px;">
-                <span class="hero-eyebrow" style="text-align: left; font-weight: 600; letter-spacing: 2px;">PROFESSIONAL CORPORATE SERVICES</span>
-                <h1 class="hero-headline serif-font" style="margin-bottom: 24px;">Business Setup<br>Simplified</h1>
-                <p class="hero-subline" style="margin-left: 0; margin-right: 0; text-align: left; max-width: 600px; line-height: 1.6; font-size: 1rem;">Turn your business ambitions into reality<span class="mobile-hidden"> with expert company formation services across Mainland, Free Zone, Offshore, and Branch Offices in the UAE. We manage licensing, documentation, approvals, visas, and banking - so you can launch with confidence.</span></p>
+            <!-- Left Side (55%) -->
+            <div class="hero-left-col hero-fade-up">
+                <span class="premium-eyebrow">
+                    <span class="gold-line"></span> PROFESSIONAL CORPORATE SERVICES
+                </span>
+                <h1 class="premium-headline">Business Setup &<br><span class="gold-text">Business Finance,</span><br>Simplified.</h1>
+                <p class="premium-paragraph hero-fade-up delay-1">Turn your business ambitions into reality with expert company formation, licensing, visas, banking assistance, mortgage advisory, and business finance solutions across the UAE.</p>
                 
-                <div class="hero-buttons" style="margin-top: 32px; margin-bottom: 32px; display: flex; justify-content: flex-start; gap: 16px;">
-                    <a href="#contact" class="btn btn-primary btn-large" style="background: #C89C4C; border: 1px solid #C89C4C; color: var(--color-white); min-width: 220px; border-radius: 100px;">Book Free Consultation</a>
+                <div class="premium-cta-row hero-fade-up delay-2">
+                    <a href="#contact" class="btn premium-primary-btn">
+                        Book Free Consultation <i class="ph-bold ph-arrow-right slide-arrow"></i>
+                    </a>
                 </div>
-                
-                <div class="hero-trust-indicators" style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 16px;">
-                    <span style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem;"><i class="ph ph-check" style="color: #C89C4C; font-size: 1.1rem;"></i> Mainland &bull; Free Zone &bull; Offshore</span>
-                    <span style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem;"><i class="ph ph-check" style="color: #C89C4C; font-size: 1.1rem;"></i> End-to-End Company Formation</span>
-                    <span style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem;"><i class="ph ph-check" style="color: #C89C4C; font-size: 1.1rem;"></i> Licensing &bull; Visas &bull; Banking Assistance</span>
+
+
+            </div>
+
+            <!-- Right Side (45%) -->
+            <div class="hero-right-col hero-slide-in">
+                <div class="premium-glass-container">
+                    <!-- Section 1 -->
+                    <div class="glass-section">
+                        <div class="glass-section-header">
+                            <i class="ph-light ph-buildings"></i>
+                            <h3>Business Setup</h3>
+                        </div>
+                        <ul class="premium-list">
+                            <li><i class="ph-light ph-check"></i> Mainland Company Setup</li>
+                            <li><i class="ph-light ph-check"></i> Free Zone Company Setup</li>
+                            <li><i class="ph-light ph-check"></i> Offshore Formation</li>
+                            <li><i class="ph-light ph-check"></i> Branch Office</li>
+                            <li><i class="ph-light ph-check"></i> Licensing & Approvals</li>
+                            <li><i class="ph-light ph-check"></i> Visa & PRO Services</li>
+                            <li><i class="ph-light ph-check"></i> Banking Assistance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="premium-divider"></div>
+                    
+                    <!-- Section 2 -->
+                    <div class="glass-section">
+                        <div class="glass-section-header">
+                            <i class="ph-light ph-house-line"></i>
+                            <h3>Mortgage & Business Finance</h3>
+                        </div>
+                        <ul class="premium-list">
+                            <li><i class="ph-light ph-check"></i> Residential Mortgage</li>
+                            <li><i class="ph-light ph-check"></i> Commercial Mortgage</li>
+                            <li><i class="ph-light ph-check"></i> Refinance</li>
+                            <li><i class="ph-light ph-check"></i> Business Finance</li>
+                            <li><i class="ph-light ph-check"></i> Non-Resident Mortgage</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Side (Glass Card) -->
-            <div class="hero-right-card" style="flex: 1; min-width: 320px; max-width: 550px; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 24px; padding: 40px; color: var(--color-white); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);">
-                <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 16px; line-height: 1.3;">Mortgage Services / Business Finance at your convenience.</h3>
-                <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85; margin-bottom: 28px;">Whether you are buying an apartment/villa for your dream home or investing in an office or a factory/warehouse, we specialise in providing tailored solutions to help you secure the appropriate finance.</p>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><i class="ph-fill ph-house" style="color: #C89C4C;"></i> Residential mortgage</span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><i class="ph-fill ph-buildings" style="color: #C89C4C;"></i> Commercial mortgage</span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><i class="ph-fill ph-arrows-left-right" style="color: #C89C4C;"></i> Refinance/Balance Transfers</span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><i class="ph-fill ph-globe" style="color: #C89C4C;"></i> Non resident mortgages</span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><i class="ph-fill ph-briefcase" style="color: #C89C4C;"></i> Business Finance</span>
-                </div>
-            </div>
+
 
         </div>
     </section>
@@ -573,125 +601,177 @@
     </section>
 
 
-    
-    <section class="testimonials section-padding" style="background-color: #eef0f3;">
-        <div class="container">
-            <span class="section-label text-center" style="display: block;">Testimonials</span>
-            <h2 class="section-title text-center">Client Success Stories</h2>
-            <p class="section-subtitle text-center" style="margin: 0 auto var(--spacing-xl) auto;">What our clients say about their business setup journey with VAS Consultants.</p>
+    <section class="testimonials section-padding" style="background-color: #ffffff; padding: 100px 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 16px; font-size: 2.2rem; color: #121212;">Testimonials<br>Client Success Stories</h2>
+            <p class="section-subtitle" style="margin: 0 auto 80px auto; color: #666; font-size: 1.05rem; max-width: 800px; line-height: 1.6;">What our clients say about their business setup journey with VAS Consultants.</p>
             
-            <div class="masonry-testimonials">
+            <div class="testimonial-carousel-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 30px;">
+                <button class="carousel-nav-btn prev-btn" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
                 
-                <div class="masonry-card card-type-1">
-                    <i class="ph-fill ph-quotes quote-icon-top"></i>
-                    <p class="masonry-text">"VAS Consultants simplified the entire mainland setup process. Their deep local knowledge saved us months of bureaucratic delays. Highly recommended."</p>
-                    <div class="author-info">
-                        <strong>James R.</strong>
-                        <span>Tech Startup Founder</span>
-                    </div>
-                    <div class="avatar-top-right">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="James R." class="avatar-img" loading="lazy">
-                    </div>
-                </div>
-
-                
-                <div class="masonry-card card-type-2">
-                    <div class="avatar-top-center">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Sarah M." class="avatar-img" loading="lazy">
-                    </div>
-                    <div class="stars">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <h4>I really appreciate!!</h4>
-                    <p class="masonry-text">"Incredible support with our free zone license and corporate bank account. They guided us step-by-step with absolute transparency."</p>
-                    <div class="author-info">
-                        <strong>Sarah M.</strong>
-                        <span>E-commerce Owner</span>
-                    </div>
-                    <i class="ph-fill ph-quotes quote-icon-bottom-right"></i>
-                </div>
-
-                
-                <div class="masonry-card card-type-3">
-                    <h4 style="text-align: center; margin-bottom: 12px; font-size: 1.2rem;">I was very impressed!</h4>
-                    <p class="masonry-text" style="text-align: center;">"Professional PRO services. They handled my Golden Visa flawlessly while maintaining clear communication throughout the process."</p>
-                    <div class="author-info" style="text-align: center; margin-top: 16px;">
-                        <strong>Ahmed K.</strong>
-                        <span style="display: block;">Real Estate Investor</span>
-                    </div>
-                    <div class="avatar-bottom-center">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" alt="Ahmed K." class="avatar-img" loading="lazy">
-                    </div>
-                </div>
-
-                
-                <div class="masonry-card card-type-4">
-                    <div class="avatar-top-center">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="Michael B." class="avatar-img" loading="lazy">
-                    </div>
-                    <h4>Good Job!</h4>
-                    <div class="stars">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <p class="masonry-text">"The fastest business setup experience I've had in Dubai. The team was exceptional."</p>
-                    <div class="author-info">
-                        <strong>Michael B.</strong>
-                        <span>Trading LLC</span>
-                    </div>
-                </div>
-
-                
-                <div class="masonry-card card-type-5">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Client" class="portrait-img" loading="lazy">
-                    <div class="content">
-                        <p class="masonry-text">"A truly premium service that exceeded all expectations. They handled everything perfectly."</p>
-                        <div class="author-info" style="text-align: right; margin-top: 16px;">
-                            <strong>Elena V.</strong>
+                <div class="testimonial-viewport" style="overflow: hidden; flex-grow: 1; width: 100%;">
+                    <div class="testimonial-track" style="display: flex; gap: 30px; transition: transform 0.5s ease-in-out;" id="testimonialTrack">
+                        
+                        <!-- Card 1 -->
+                        <div class="test-card" style="background: #EEF2FE; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" alt="Ahmed K." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #EEF2FE;">
+                            <h4 style="color: #1a233a; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Ahmed K., Real Estate Investor</h4>
+                            <p style="color: #616b7c; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"Professional PRO services. They handled my Golden Visa flawlessly while maintaining clear communication throughout the process."</p>
+                            <div style="color: #274C77; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
                         </div>
+
+                        <!-- Card 2 -->
+                        <div class="test-card" style="background: #E8F6F6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150" alt="Rajesh M." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #E8F6F6;">
+                            <h4 style="color: #1a2f2c; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Rajesh M., Developer</h4>
+                            <p style="color: #5d7572; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"VAS Consultants provided unparalleled guidance on our commercial mortgage. Their strategic approach perfectly supported our expansion plans."</p>
+                            <div style="color: #2A9D8F; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="test-card" style="background: #FFF9E6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" alt="Elena V." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #FFF9E6;">
+                            <h4 style="color: #332b12; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Elena V., Tech Founder</h4>
+                            <p style="color: #7a6e4d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"A truly premium service that exceeded all expectations. They handled everything perfectly from Mainland setup to Banking assistance."</p>
+                            <div style="color: #E9C46A; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="test-card" style="background: #EEF2FE; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="James R." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #EEF2FE;">
+                            <h4 style="color: #1a233a; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">James R., Tech Startup Founder</h4>
+                            <p style="color: #616b7c; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"VAS Consultants simplified the entire mainland setup process. Their deep local knowledge saved us months of bureaucratic delays. Highly recommended."</p>
+                            <div style="color: #274C77; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="test-card" style="background: #E8F6F6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Sarah M." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #E8F6F6;">
+                            <h4 style="color: #1a2f2c; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Sarah M., E-commerce Owner</h4>
+                            <p style="color: #5d7572; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"Incredible support with our free zone license and corporate bank account. They guided us step-by-step with absolute transparency."</p>
+                            <div style="color: #2A9D8F; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="test-card" style="background: #FFF9E6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="Michael B." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #FFF9E6;">
+                            <h4 style="color: #332b12; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Michael B., Trading LLC</h4>
+                            <p style="color: #7a6e4d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"The fastest business setup experience I've had in Dubai. The team was exceptional."</p>
+                            <div style="color: #E9C46A; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 7 -->
+                        <div class="test-card" style="background: #EEF2FE; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Diana C." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #EEF2FE;">
+                            <h4 style="color: #1a233a; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Diana C., Marketing Director</h4>
+                            <p style="color: #616b7c; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"Strategic advice that saved us money. Highly professional team."</p>
+                            <div style="color: #274C77; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="test-card" style="background: #E8F6F6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" alt="David C." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #E8F6F6;">
+                            <h4 style="color: #1a2f2c; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">David C., Managing Director</h4>
+                            <p style="color: #5d7572; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"The level of professionalism and attention to detail from VAS Consultants is unmatched. They handled our entire offshore setup effortlessly, allowing us to focus on scaling our business globally."</p>
+                            <div style="color: #2A9D8F; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 9 -->
+                        <div class="test-card" style="background: #FFF9E6; flex: 0 0 calc(33.333% - 20px); border-radius: 12px; padding: 45px 30px 30px; position: relative; text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" alt="Ahmed K." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border: 4px solid #FFF9E6;">
+                            <h4 style="color: #332b12; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; font-family: 'Inter', sans-serif;">Ahmed K., Real Estate Investor</h4>
+                            <p style="color: #7a6e4d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">"Professional PRO services. They handled my Golden Visa flawlessly while maintaining clear communication throughout the process."</p>
+                            <div style="color: #E9C46A; font-size: 1.1rem; display: flex; justify-content: center; gap: 6px;">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
                 
-                <div class="masonry-card card-type-6">
-                    <div class="stars" style="text-align: center; margin-bottom: 12px;">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <p class="masonry-text" style="text-align: center;">"Strategic advice that saved us money. Highly professional team."</p>
-                    <div class="avatar-bottom-center">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Diana C." class="avatar-img" loading="lazy">
-                    </div>
-                </div>
-
-                
-                <div class="masonry-card card-type-2">
-                    <div class="avatar-top-center">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150" alt="Rajesh M." class="avatar-img" loading="lazy">
-                    </div>
-                    <div class="stars">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <h4>Incredible Finance Support!</h4>
-                    <p class="masonry-text">"VAS Consultants provided unparalleled guidance on our commercial mortgage. Their strategic approach to business finance secured us terms that perfectly supported our expansion plans."</p>
-                    <div class="author-info">
-                        <strong>Rajesh M.</strong>
-                        <span>Real Estate Developer</span>
-                    </div>
-                    <i class="ph-fill ph-quotes quote-icon-bottom-right"></i>
-                </div>
-
-                <!-- 7th Testimonial -->
-                <div class="masonry-card card-type-1">
-                    <i class="ph-fill ph-quotes quote-icon-top-left"></i>
-                    <p class="masonry-text">"The level of professionalism and attention to detail from VAS Consultants is unmatched. They handled our entire offshore setup effortlessly, allowing us to focus on scaling our business globally."</p>
-                    <div class="author-info">
-                        <strong>David C.</strong>
-                        <span>Managing Director</span>
-                    </div>
-                    <div class="avatar-top-right">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" alt="David C." class="avatar-img" loading="lazy">
-                    </div>
-                </div>
+                <button class="carousel-nav-btn next-btn" aria-label="Next"><i class="ph ph-caret-right"></i></button>
             </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('testimonialTrack');
+                    if (!track) return;
+                    
+                    const prevBtn = document.querySelector('.prev-btn');
+                    const nextBtn = document.querySelector('.next-btn');
+                    let currentIndex = 0;
+                    const totalCards = track.children.length;
+                    const cardsToShow = 3;
+                    const maxIndex = Math.max(0, totalCards - cardsToShow);
+                    
+                    function updateCarousel() {
+                        if (window.innerWidth <= 900) {
+                            track.style.transform = 'none';
+                            return;
+                        }
+                        const cardWidth = track.children[0].getBoundingClientRect().width;
+                        const gap = 30; // Matches the CSS gap
+                        const moveAmount = (cardWidth + gap) * currentIndex;
+                        track.style.transform = `translateX(-${moveAmount}px)`;
+                    }
+
+                    function nextSlide() {
+                        if (window.innerWidth <= 900) return;
+                        currentIndex++;
+                        if (currentIndex > maxIndex) {
+                            currentIndex = 0;
+                        }
+                        updateCarousel();
+                    }
+
+                    function prevSlide() {
+                        if (window.innerWidth <= 900) return;
+                        currentIndex--;
+                        if (currentIndex < 0) {
+                            currentIndex = maxIndex;
+                        }
+                        updateCarousel();
+                    }
+
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            nextSlide();
+                            resetTimer();
+                        });
+                    }
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            prevSlide();
+                            resetTimer();
+                        });
+                    }
+
+                    window.addEventListener('resize', updateCarousel);
+
+                    let autoScrollTimer = setInterval(nextSlide, 5000);
+
+                    function resetTimer() {
+                        clearInterval(autoScrollTimer);
+                        autoScrollTimer = setInterval(nextSlide, 5000);
+                    }
+                });
+            </script>
         </div>
     </section>
 
