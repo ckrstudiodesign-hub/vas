@@ -213,41 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// On-load and Recurring Contact Modal Logic
+// Form Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('onloadContactModal');
-    
-    function showModal() {
-        if (modal && !modal.classList.contains('active')) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        }
-    }
-
-    // Only show modal on the home page
-    const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
-    if (isHomePage) {
-        setTimeout(showModal, 1500); // 1.5 second delay
-    }
-
-    // Close modal logic
-    const closeBtn = document.querySelector('.onload-modal-close');
-    
-    if (closeBtn && modal) {
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close when clicking outside content
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-
     // Form Sanitization and Validation
     function sanitizeHTML(str) {
         const temp = document.createElement('div');
@@ -295,12 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Optional: Process the form via fetch/API here
             
-            // If it's the modal form, close it
-            if (form.id === 'onloadContactForm' && modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-            
+
             form.reset();
         });
     });
