@@ -44,7 +44,7 @@ if (startIndex !== -1 && endIndex !== -1) {
                 
                 <h2 class="serif-font" style="font-size: 2.5rem; margin-bottom: 24px;">Balance Transfer / Refinance</h2>
                 <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-dark-grey); margin-bottom: 24px;">
-                    We provide you guidance to transfer your mortgage to maximising your resources and reducing your cost outlay. Whatever is your objective, viz. you are looking for lower interest costs or to reduce your monthly outlays or to consolidate your debt, we have the expertise and resources to assist you every step of the way.
+                    We provide you guidance to transfer your mortgage to maximising your resources and reducing your cost outlay. Whatever your objective—whether you are looking for lower interest costs, reducing your monthly outlays, or consolidating your debt—we have the expertise and resources to assist you every step of the way.
                 </p>
                 <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-dark-grey); margin-bottom: 48px;">
                     If you wish to refinance and cash out your equity in the property, for the purpose of acquiring more properties and/or to assist in your business, we can provide the right solutions and ensure 
