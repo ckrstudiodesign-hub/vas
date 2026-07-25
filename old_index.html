@@ -747,31 +747,44 @@
 
                 
                 <div class="contact-form-wrapper">
-                    <form class="modern-form">
-                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="modern-form">
+                        <!-- ========================================================================= -->
+                        <!-- WEB3FORMS CONFIGURATION: Paste your Access Key in the value="" attribute  -->
+                        <!-- Get your free key at: https://web3forms.com/                              -->
+                        <!-- ========================================================================= -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                        <!-- Optional: Custom Subject Line for notification emails -->
+                        <input type="hidden" name="subject" value="New Inquiry from VAS Consultants Website">
+                        <input type="hidden" name="from_name" value="VAS Consultants Contact Form">
+
+                        <!-- Honeypot Spam Protection (Do not remove) -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label>First Name</label>
-                                <input type="text" placeholder="John" required>
+                                <input type="text" name="first_name" placeholder="John" required>
                             </div>
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Doe" required>
+                                <input type="text" name="last_name" placeholder="Doe" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="main-email">Email Address</label>
-                                <input id="main-email" type="email" placeholder="john@example.com" required>
+                                <input id="main-email" type="email" name="email" placeholder="john@example.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="onload-phone">Phone Number</label>
-                    <input id="onload-phone" type="tel" placeholder="+971 50 123 4567" required>
+                                <input id="onload-phone" type="tel" name="phone" placeholder="+971 50 123 4567" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="main-service">Interested Service</label>
-                            <select id="main-service" required>
+                            <select id="main-service" name="interested_service" required>
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="mainland">Mainland Setup</option>
                                 <option value="freezone">Free Zone Setup</option>
@@ -784,7 +797,7 @@
                         </div>
                         <div class="form-group">
                             <label for="main-message">Tell us about your requirements...</label>
-                            <textarea id="main-message" rows="4" placeholder="How can we help you?"></textarea>
+                            <textarea id="main-message" name="message" rows="4" placeholder="How can we help you?"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="padding: 16px; font-size: 1.1rem; letter-spacing: 1px; width: 100%; border: none;">Submit Inquiry <i class="ph-bold ph-paper-plane-right" style="margin-left: 8px;"></i></button>
                     </form>
@@ -863,19 +876,25 @@
                 <h3>Start Your Journey</h3>
                 <p>Leave your details and our experts will get back to you shortly.</p>
             </div>
-            <form id="onloadContactForm" class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" id="onloadContactForm" class="contact-form">
+                <!-- WEB3FORMS CONFIGURATION: Paste your Access Key below -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Callback Request from VAS Consultants Website">
+                <input type="hidden" name="from_name" value="VAS Consultants Modal Form">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                 <div class="form-group">
                     <label for="onload-name">Name</label>
-                    <input id="onload-name" type="text" placeholder="Your full name" required>
+                    <input id="onload-name" type="text" name="name" placeholder="Your full name" required>
                 </div>
                 <div class="form-group">
                     <label for="onload-phone">Phone Number</label>
-                    <input id="onload-phone" type="tel" placeholder="Your phone number" required>
+                    <input id="onload-phone" type="tel" name="phone" placeholder="Your phone number" required>
                 </div>
                 <div class="form-group">
                     <label for="onload-email">Email <span class="optional-text">(Optional)</span></label>
-                    <input id="onload-email" type="email" placeholder="Your email address">
+                    <input id="onload-email" type="email" name="email" placeholder="Your email address">
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.05rem;">Request Callback</button>
             </form>

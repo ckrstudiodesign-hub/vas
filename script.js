@@ -227,15 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return re.test(String(email).toLowerCase());
     }
 
-    // Handle all forms (prevent default, validate, sanitize, check honeypot)
+    // Handle all forms (prevent default, validate, sanitize, check honeypot, submit via Web3Forms)
     const allForms = document.querySelectorAll('form');
     allForms.forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // 1. Honeypot Check for Spam Protection
             const honeypot = form.querySelector('input[name="_honey"]');
-            if (honeypot && honeypot.value !== '') {
+            const botcheck = form.querySelector('input[name="botcheck"]');
+            if ((honeypot && honeypot.value !== '') || (botcheck && botcheck.checked)) {
                 // Silently reject spam
                 console.warn('Spam detected');
                 return;
@@ -253,17 +254,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const textInputs = form.querySelectorAll('input[type="text"], input[type="tel"], textarea');
             textInputs.forEach(input => {
-                if (input.name === '_honey') return; // skip honeypot
+                if (input.name === '_honey' || input.name === 'access_key' || input.name === 'subject' || input.name === 'from_name') return; // skip special fields
                 // Basic sanitization
                 input.value = sanitizeHTML(input.value);
             });
 
             if (!isValid) return;
 
-            // Optional: Process the form via fetch/API here
-            
+            // 3. Web3Forms Submission Handling
+            const accessKeyInput = form.querySelector('input[name="access_key"]');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
 
-            form.reset();
+            if (accessKeyInput && accessKeyInput.value && accessKeyInput.value !== 'YOUR_ACCESS_KEY_HERE') {
+                try {
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = 'Sending... <i class="ph ph-spinner ph-spin"></i>';
+                    }
+
+                    const formData = new FormData(form);
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await response.json();
+
+                    if (response.status === 200) {
+                        if (submitBtn) {
+                            submitBtn.style.backgroundColor = '#2e7d32';
+                            submitBtn.innerHTML = 'Message Sent Successfully! <i class="ph-bold ph-check" style="margin-left: 8px;"></i>';
+                        }
+                        form.reset();
+                        setTimeout(() => {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.style.backgroundColor = '';
+                                submitBtn.innerHTML = originalBtnText;
+                            }
+                        }, 5000);
+                    } else {
+                        alert(data.message || 'Something went wrong. Please try again.');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Submission Error:', error);
+                    alert('Could not submit form. Please check your network connection.');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                }
+            } else if (accessKeyInput && accessKeyInput.value === 'YOUR_ACCESS_KEY_HERE') {
+                alert('Please configure your Web3Forms Access Key in the HTML form before submitting.');
+            } else {
+                // Fallback for forms without Web3Forms
+                alert('Thank you! Your inquiry has been received.');
+                form.reset();
+            }
         });
     });
 });
