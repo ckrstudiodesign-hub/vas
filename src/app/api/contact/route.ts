@@ -36,22 +36,25 @@ export async function POST(request: Request) {
 
     // 3. Prepare payload for Web3Forms API
     const sanitized = validation.sanitizedData;
-    const formData = new FormData();
-    formData.append('access_key', accessKey);
-    formData.append('name', sanitized.name);
-    formData.append('email', sanitized.email);
-    formData.append('phone', sanitized.phone);
-    if (sanitized.service) {
-      formData.append('service', sanitized.service);
-    }
-    formData.append('message', sanitized.message);
-    formData.append('subject', `New Corporate Inquiry from ${sanitized.name}`);
-    formData.append('from_name', 'VAS Corporate Services Portal');
+    const payload = {
+      access_key: accessKey,
+      name: sanitized.name,
+      email: sanitized.email,
+      phone: sanitized.phone,
+      service: sanitized.service || 'General Inquiry',
+      message: sanitized.message,
+      subject: `New Corporate Inquiry from ${sanitized.name}`,
+      from_name: 'VAS Corporate Services Portal',
+    };
 
-    // 4. Send request to Web3Forms API
+    // 4. Send request to Web3Forms API using JSON
     const apiResponse = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(payload),
     });
 
     const data = await apiResponse.json();
@@ -62,9 +65,7 @@ export async function POST(request: Request) {
         message: 'Inquiry submitted successfully.',
       });
     } else {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Web3Forms API error:', data);
-      }
+      console.error('Web3Forms API error:', data);
       return NextResponse.json(
         {
           success: false,
