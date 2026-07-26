@@ -43,6 +43,8 @@ export interface TestimonialItem {
 }
 
 export interface ContactFormData {
+  firstName?: string;
+  lastName?: string;
   name: string;
   email: string;
   phone: string;
