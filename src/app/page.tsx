@@ -66,9 +66,9 @@ export default function HomePage() {
             </p>
 
             <div className="premium-cta-row hero-fade-up delay-2">
-              <Link href="/#contact" className="btn premium-primary-btn">
+              <a href="#contact" className="btn premium-primary-btn">
                 Book Free Consultation <i className="ph-bold ph-arrow-right slide-arrow"></i>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -482,9 +482,9 @@ export default function HomePage() {
           </div>
 
           <div className="text-center" style={{ marginTop: '40px' }}>
-            <Link href="/#contact" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '1rem', letterSpacing: '1px' }}>
+            <a href="#contact" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '1rem', letterSpacing: '1px' }}>
               Get Started <i className="ph-bold ph-arrow-right" style={{ marginLeft: '8px', verticalAlign: 'middle' }}></i>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -587,9 +587,9 @@ export default function HomePage() {
                 Blogs and News
               </h2>
             </div>
-            <Link href="/#contact" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '0.95rem' }}>
+            <a href="#contact" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '0.95rem' }}>
               View All Articles
-            </Link>
+            </a>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-md)', maxWidth: '1200px', margin: '0 auto' }}>
@@ -604,9 +604,9 @@ export default function HomePage() {
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-dark-grey)' }}>Khaleej Times</span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: 1.4 }}>DMCC accounts for 15 percent of total FDI in Dubai. 7 percent of GDP in H1 2024</h3>
-                <Link href="/#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
+                <a href="#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
                   Read Article <i className="ph ph-arrow-right"></i>
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -621,9 +621,9 @@ export default function HomePage() {
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-dark-grey)' }}>The National</span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: 1.4 }}>UAE considers 10-year &apos;golden license&apos; and 5-year &apos;silver license&apos; to boost business</h3>
-                <Link href="/#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
+                <a href="#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
                   Read Article <i className="ph ph-arrow-right"></i>
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -638,9 +638,9 @@ export default function HomePage() {
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-dark-grey)' }}>Gulf News</span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: 1.4 }}>Dubai unveils new streamlined corporate tax regulations for free zone companies</h3>
-                <Link href="/#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
+                <a href="#contact" className="circular-arrow-link" style={{ marginTop: 'auto' }}>
                   Read Article <i className="ph ph-arrow-right"></i>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
